@@ -223,7 +223,7 @@ _GLIBCXX_BEGIN_NAMESPACE_VERSION
       { _M_w._M_do_wait(_M_version); }
     };
 
-    void
+    inline void
     __thread_relax() noexcept
     {
 #if defined __i386__ || defined __x86_64__
@@ -233,9 +233,9 @@ _GLIBCXX_BEGIN_NAMESPACE_VERSION
 #endif
     }
 
-    void
+    inline void
     __thread_yield() noexcept
-   {
+    {
 #if defined _GLIBCXX_USE_SCHED_YIELD
      __gthread_yield();
 #endif
