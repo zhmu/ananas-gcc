@@ -2683,6 +2683,16 @@ uts4*)
   shlibpath_var=LD_LIBRARY_PATH
   ;;
 
+ananas*)
+  version_type=linux
+  need_lib_prefix=no
+  need_version=no
+  library_names_spec='${libname}${release}${shared_ext}$versuffix ${libname}${release}${shared_ext}${major} ${libname}${shared_ext}'
+  soname_spec='${libname}${release}${shared_ext}$major'
+  shlibpath_var=LD_LIBRARY_PATH
+  hardcode_into_libs=yes
+  ;;
+
 *)
   dynamic_linker=no
   ;;
@@ -2993,6 +3003,10 @@ lt_cv_deplibs_check_method='unknown'
 
 case $host_os in
 aix[[4-9]]*)
+  lt_cv_deplibs_check_method=pass_all
+  ;;
+
+ananas*)
   lt_cv_deplibs_check_method=pass_all
   ;;
 
@@ -6406,6 +6420,10 @@ if test "$_lt_caught_CXX_error" != yes; then
       vxworks*)
         # FIXME: insert proper C++ library support
         _LT_TAGVAR(ld_shlibs, $1)=no
+        ;;
+
+      ananas*)
+        _LT_TAGVAR(ld_shlibs, $1)=yes
         ;;
 
       *)
