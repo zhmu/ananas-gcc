@@ -718,6 +718,7 @@ case ${target} in
   default_use_cxa_atexit=yes
   use_gcc_stdint=wrap
   extra_options="$extra_options ananas.opt"
+  thread_file='posix'
   ;;
 *-*-dragonfly*)
   gas=yes
