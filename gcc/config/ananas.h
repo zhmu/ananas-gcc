@@ -8,11 +8,11 @@
 /* Files that are linked before user code.
    The %s tells GCC to look for these files in the library directory. */
 #undef STARTFILE_SPEC
-#define STARTFILE_SPEC "crt0.o%s crti.o%s crtbegin.o%s"
- 
+#define STARTFILE_SPEC "crt1.o%s crti.o%s %{shared|pie:crtbeginS.o%s;:crtbegin.o%s}"
+
 /* Files that are linked after user code. */
 #undef ENDFILE_SPEC
-#define ENDFILE_SPEC "crtend.o%s crtn.o%s"
+#define ENDFILE_SPEC "%{shared|pie:crtendS.o%s;:crtend.o%s} crtn.o%s"
  
 /* Additional predefined macros. */
 #undef TARGET_OS_CPP_BUILTINS
